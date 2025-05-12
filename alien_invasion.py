@@ -27,8 +27,12 @@ class AlienInvasion:
     def _check_event(self):
         """Response to key press and mouse clicks."""
         for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            if event.type == pygame.QUIT:    
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    # Move ship to right
+                    self.ship.rect.x += 1
                     
     def _update_screen(self):
         """Update images to the screen, and flip to new screen."""
